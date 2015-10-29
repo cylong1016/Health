@@ -1,0 +1,16 @@
+/*
+ * 2015-10-28
+ * Created by cylong
+ */
+ 
+.navbar{
+	border-radius: 0;
+}
+div.navbar-header {
+	padding-left: 10%;
+}
+
+.nav-center {
+    padding-left: 20%;
+	padding-right: 20%;
+}
