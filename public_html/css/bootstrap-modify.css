@@ -9,10 +9,7 @@
 }
 
 .navbar{
-	position: fixed;
-	z-index: 999;
 	border-radius: 0;
-	margin-top: -50px;
 	width: 100%;
 	min-height: 50px;
 }
@@ -23,4 +20,8 @@ div.navbar-header {
 .nav-center {
     padding-left: 20%;
 	padding-right: 20%;
+}
+
+.nav.nav-pills a{
+	border-radius: 0;
 }
