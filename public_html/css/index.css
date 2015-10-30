@@ -33,8 +33,8 @@ ul.sidebar a {
 }
 
 div.content {
-	margin-left: 15%;
-	margin-right: 20%;
+	float: left;
+	width: 65%;
 	background-color: #ACE04A;
 	height: 100%;
 }
@@ -64,4 +64,30 @@ div#inputarea textarea {
 div#inputarea button {
 	float: right;
 	border-radius: 0;
+}
+
+div#head {
+	float: left;
+	margin-left: 20px;
+	margin-right: 10px;
+	width: 16%;
+	min-height: 200px;
+	text-align: center;
+}
+
+div#head img{
+	width: 90%;
+	box-shadow: 0 0 10px #000;
+}
+
+div#head a:link, a:visited {
+	font-weight:bold;
+	font-size:14px;
+	color:#222222;
+	padding:4px;
+	text-decoration:none;
+}
+
+div#head a:hover,a:active {
+	color: #FFFFFF;
 }
