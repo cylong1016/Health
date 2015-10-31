@@ -22,6 +22,7 @@
 			<li class="active"><a href="index.html">首页 </i></a></li>
 			<li><a href="race.html">竞赛 </a></li>
 			<li><a href="#">活动 </a></li>
+			<li><a href="#">兴趣组 </a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown">
@@ -42,13 +43,33 @@
 </nav>
 <div class="container box">
 	<ul class="nav nav-tabs nav-stacked sidebar">
-		<li role="presentation" class="active"><a href="#news" data-toggle="tab">动态</a></li>
-		<li role="presentation"><a href="#run" data-toggle="tab">运动</a></li>
-		<li role="presentation"><a href="#ranking" data-toggle="tab">排名</a></li>
-		<li role="presentation"><a href="#body" data-toggle="tab">身体状态</a></li>
+		<li role="presentation" class="active"><a href="#run" data-toggle="tab">疯狂运动</a></li>
+		<li role="presentation"><a href="#news" data-toggle="tab">朋友圈</a></li>
+		<li role="presentation"><a href="#ranking" data-toggle="tab">我的排名</a></li>
+		<li role="presentation"><a href="#body" data-toggle="tab">我的健康</a></li>
 	</ul>
 	<div class="tab-content content">
-		<div class="tab-pane fade in active" id="news">
+		<div class="tab-pane fade in active" id="run">
+			<span class="title">您本周运动状况：</span>
+			<span class="subtitle">运动距离/公里</span>
+			<div class="progress">
+				<div class="progress-bar" role="progressbar" aria-valuenow="250" aria-valuemin="0" aria-valuemax="1000" style="min-width: 5em; width: 25%;">
+					250/1000
+				</div>
+			</div>
+			<span class="subtitle">运动时间/小时</span>
+			<div class="progress">
+				<div class="progress-bar" role="progressbar" aria-valuenow="5000" aria-valuemin="0" aria-valuemax="1000" style="min-width: 5em; width: 50%;">
+					500/1000
+				</div>
+			</div>
+			<span class="title">您的运动总量：</span>
+			<div class="run-total">
+				运动距离: <span class="em-big">30.5</span>公里
+			</div>
+		</div>
+		
+		<div class="tab-pane fade" id="news">
 			<div id="inputarea">
 				<span>炫耀一下自己的运动成果吧~</span>
 				<textarea></textarea>
@@ -56,12 +77,41 @@
 			</div>
 		</div>
 		
-		<div class="tab-pane fade" id="run">
-			<p>我的运动状态</p>
-		</div>
-		
 		<div class="tab-pane fade" id="ranking">
-		  <p>运动排名</p>
+			<span class="title">您的排名： 30 <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></span>
+			<span class="title">全站排名：</span>
+			<div class="list-group">
+				<a href="#" class="list-group-item">
+					<span class="sort-num">1</span>
+					<img class="sort-head" src="images/head.jpg">lsy</a>
+				<a href="#" class="list-group-item">
+					<span class="sort-num">2</span>
+					<img class="sort-head" src="images/head.jpg">cylong</a>
+				<a href="#" class="list-group-item">
+					<span class="sort-num">3</span>
+					<img class="sort-head" src="images/head.jpg">Morbi leo risus</a>
+				<a href="#" class="list-group-item">
+					<span class="sort-num">4</span>
+					<img class="sort-head" src="images/head.jpg">Porta ac consectetur ac</a>
+				<a href="#" class="list-group-item">
+					<span class="sort-num">5</span>
+					<img class="sort-head" src="images/head.jpg">Vestibulum at eros</a>
+				<a href="#" class="list-group-item">
+					<span class="sort-num">6</span>
+					<img class="sort-head" src="images/head.jpg">Vestibulum at eros</a>
+				<a href="#" class="list-group-item">
+					<span class="sort-num">7</span>
+					<img class="sort-head" src="images/head.jpg">Vestibulum at eros</a>
+				<a href="#" class="list-group-item">
+					<span class="sort-num">8</span>
+					<img class="sort-head" src="images/head.jpg">Vestibulum at eros</a>
+				<a href="#" class="list-group-item">
+					<span class="sort-num">9</span>
+					<img class="sort-head" src="images/head.jpg">Vestibulum at eros</a>
+				<a href="#" class="list-group-item">
+					<span class="sort-num">10</span>
+					<img class="sort-head" src="images/head.jpg">Vestibulum at eros</a>					
+			</div>
 		</div>
 		
 		<div class="tab-pane fade" id="body">
