@@ -1,0 +1,72 @@
+<!-- 作者：陈云龙 -->
+<!-- 时间：2015-10-31 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>健康专家</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-modify.css" rel="stylesheet">
+	<link href="css/activity.css" rel="stylesheet">
+	<link href="css/nav.css" rel="stylesheet">
+	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">健康专家</a>
+	</div>
+	<div class="nav-center">
+		<ul class="nav navbar-nav">
+			<li><a href="index.html">首页 </i></a></li>
+			<li><a href="race.html">竞赛 </a></li>
+			<li class="active"><a href="activity.html">活动 </a></li>
+			<li><a href="interest.html">兴趣组 </a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">笑话人生cylong <b class="caret"></b></a>
+				<ul role="menu" class="dropdown-menu">
+					<li><a href="profile.html">我的主页</a></li>
+					<li><a href="#">个人资料</a></li>
+					<li><a href="#">我的好友</a></li>
+					<li><a href="#">我的账户</a></li>
+					<li class="divider"></li>
+					<li><a href="#">退出登录</a></li>
+				</ul>
+			</li>
+			<li><a href="#">
+				<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a>
+			</li>
+		</ul>
+	</div>
+</nav>
+<div class="container box">
+	<ul class="nav nav-tabs nav-stacked sidebar">
+		<li role="presentation" class="active"><a href="#recommend" data-toggle="tab">活动推荐</a></li>
+		<li role="presentation"><a href="#all" data-toggle="tab">全部活动</span></a></li>
+		<li role="presentation"><a href="#participate" data-toggle="tab">我参与的</a></li>
+	</ul>
+	<div class="tab-content content">
+		<!-- 活动推荐 -->
+		<div class="tab-pane fade in active" id="recommend">
+		推荐活动
+		</div>
+		<!-- 全部活动 -->
+		<div class="tab-pane fade" id="all">
+			<div class="input-group input-group-sm">
+					<input type="text" class="form-control" aria-describedby="sizing-addon3" placeholder="搜索活动……">
+					<span class="input-group-addon" id="sizing-addon3"><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></span>
+				</div>
+		</div>
+		<!-- 我参与的 -->
+		<div class="tab-pane fade" id="participate">
+		我参与的
+		</div>
+	</div>
+</div>
+</body>
+</html>
