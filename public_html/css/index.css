@@ -101,8 +101,8 @@ div#head a:hover,a:active {
 }
 
 .run-total {
-	margin: 0 5%;
-	
+	display: inline;
+	margin: 10px 30px;
 }
 
 .em-big {
@@ -112,6 +112,55 @@ div#head a:hover,a:active {
 	border-radius:10%;
 	padding: 1px 2px;
 	margin: 0 4px;
-	background-color: #295496;
+	background-color: #F65150;
 	text-align: center;
+}
+
+.sort-info {
+	float: right;
+	margin: 0 10px;
+}
+
+.ranking-tab {
+	margin: 3px 5%;
+}
+
+.news-item {
+	margin: 10px 0;
+	padding: 12px;
+	background-color: rgba(255,255,255, 0.3);
+}
+
+.item-name {
+	display: block;
+	color: black;
+	font-size: 15px;
+}
+
+.item-head {
+	float: left;
+	border-radius: 50%;
+	width: 40px;
+	height: 100%;
+	margin: 0 15px;
+}
+
+.item-date {
+	font-size: 12px;
+}
+
+.item-content {
+	margin-left:  70px;
+	margin-top: 10px;
+}
+
+.bmi {
+	text-align: center;
+	margin-top: 5px;
+	margin-left: 10%;
+	width: 20%;
+}
+
+.bmi button {
+	margin-top: 10px;
 }
