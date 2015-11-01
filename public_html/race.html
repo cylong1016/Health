@@ -45,11 +45,80 @@
 </nav>
 <div class="container box">
 	<ul class="nav nav-tabs nav-stacked sidebar">
-		<li role="presentation" class="active"><a href="#">全部竞赛</span></a></li>
-		<li role="presentation"><a href="#">我参与的</a></li>
-		<li role="presentation"><a href="#">发布竞赛</a></li>
-		<li role="presentation"><a href="#">历史竞赛</a></li>
+		<li role="presentation" class="active"><a href="#all" data-toggle="tab">全部竞赛</span></a></li>
+		<li role="presentation"><a href="#release" data-toggle="tab">发布竞赛</a></li>
+		<li role="presentation"><a href="#participate" data-toggle="tab">我参与的</a></li>
+		<li role="presentation"><a href="#history" data-toggle="tab">历史竞赛</a></li>
 	</ul>
+	<div class="tab-content content">
+		<!-- 全部竞赛 -->
+		<div class="tab-pane fade in active" id="all">
+			<div class="input-group input-group-sm">
+				<input type="text" class="form-control" aria-describedby="sizing-addon3" placeholder="搜索竞赛……">
+				<span class="input-group-addon" id="sizing-addon3"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+			</div>
+			<table class="race-item">
+				<tr>
+					<th rowspan="2"><a href="#">我们一起来运动</a></th>
+					<th>参与人数</th>
+					<th>开始时间</th>
+					<th>结束时间</th>
+					<th>胜利奖金</th>
+					<th width="130px">发起人</th>
+				</tr>
+				<tr>
+					<td>30</td>
+					<td>2015-11-01 13:32</td>
+					<td>2015-11-02 14:32</td>
+					<td>1000金币</td>
+					<td class="username"><a href="#">笑话人生cylong</a></td>
+				</tr>
+			</table>
+			<table class="race-item">
+				<tr>
+					<th rowspan="2"><a href="#">快来和我们一起PK吧</a></th>
+					<th>参与人数</th>
+					<th>开始时间</th>
+					<th>结束时间</th>
+					<th>胜利奖金</th>
+					<th width="130px">发起人</th>
+				</tr>
+				<tr>
+					<td>30</td>
+					<td>2015-11-01 13:32</td>
+					<td>2015-11-02 14:32</td>
+					<td>1000金币</td>
+					<td class="username"><a href="#">cylong</a></td>
+				</tr>
+			</table>
+			<table class="race-item">
+				<tr>
+					<th rowspan="2"><a href="#">这个季节适合跑步，奔跑吧</a></th>
+					<th>参与人数</th>
+					<th>开始时间</th>
+					<th>结束时间</th>
+					<th>胜利奖金</th>
+					<th width="130px">发起人</th>
+				</tr>
+				<tr>
+					<td>30</td>
+					<td>2015-11-01 13:32</td>
+					<td>2015-11-02 14:32</td>
+					<td>1000金币</td>
+					<td class="username"><a href="#">lsy</a></td>
+				</tr>
+			</table>
+		</div>
+		<div class="tab-pane fade" id="release">
+		发布竞赛
+		</div>
+		<div class="tab-pane fade" id="participate">
+		我参与的
+		</div>
+		<div class="tab-pane fade" id="history">
+		历史竞赛
+		</div>
+	</div>
 </div>
 </body>
 </html>
