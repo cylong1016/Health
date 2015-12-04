@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-12-04 08:16:26
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-12-04 10:22:57
          compiled from "..\public_html\tpls\templates\index.html" */ ?>
 <?php /*%%SmartyHeaderCode:2183956604f12a0ec36-13531309%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '568303ab6579e1f8f600b246b0ae10ddc542f7ad' => 
     array (
       0 => '..\\public_html\\tpls\\templates\\index.html',
-      1 => 1449213372,
+      1 => 1449220929,
       2 => 'file',
     ),
   ),
@@ -45,9 +45,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<div class="nav-center">
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="index.php">首页 </i></a></li>
-			<li><a href="race.html">竞赛 </a></li>
-			<li><a href="activity.html">活动 </a></li>
-			<li><a href="interest.html">兴趣组 </a></li>
+			<li><a href="race.php">竞赛 </a></li>
+			<li><a href="activity.php">活动 </a></li>
+			<li><a href="interest.php">兴趣组 </a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown">
@@ -189,14 +189,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</div>
 					<input class="button pink" type="submit" value="保存"></input>
 			  </div>
-			  BMI 17.5
+			  <div class="bmi_val">BMI 17.5 偏轻</div>
 			  <div class="clear"></div>
 		  </div>
 		  <div class="content">
-			  <span class="title">心率：</span>
+			  <span class="title">心率：129</span>
 		  </div>
 		  <div class="content">
-			 <span class="title">血压：</span>
+			 <span class="title">血压：108/60</span>
 		 </div>
 		</div>
 	</div>

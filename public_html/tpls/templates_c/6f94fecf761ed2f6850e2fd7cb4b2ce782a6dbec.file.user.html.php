@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-12-03 18:24:19
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-12-04 11:27:45
          compiled from "..\public_html\tpls\templates\user.html" */ ?>
 <?php /*%%SmartyHeaderCode:168625660623091f487-39907819%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6f94fecf761ed2f6850e2fd7cb4b2ce782a6dbec' => 
     array (
       0 => '..\\public_html\\tpls\\templates\\user.html',
-      1 => 1449163458,
+      1 => 1449221768,
       2 => 'file',
     ),
   ),
@@ -51,9 +51,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<div class="nav-center">
 		<ul class="nav navbar-nav">
 			<li><a href="index.php">首页 </i></a></li>
-			<li><a href="race.html">竞赛 </a></li>
-			<li><a href="activity.html">活动 </a></li>
-			<li><a href="interest.html">兴趣组 </a></li>
+			<li><a href="race.php">竞赛 </a></li>
+			<li><a href="activity.php">活动 </a></li>
+			<li><a href="interest.php">兴趣组 </a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown">

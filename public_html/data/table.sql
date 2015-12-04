@@ -18,6 +18,7 @@ INSERT INTO user (name, pass, identity, goal, avatar, sex, motto, docid, coaid) 
 
 SELECT * FROM user;
 
+-- 用户健康表
 CREATE TABLE user_health (
     id integer PRIMARY KEY,
     uid integer,
@@ -34,3 +35,14 @@ CREATE TABLE user_health (
 INSERT INTo user_health(uid, create_date, height, weight, hr, bph, bpl, run_time, run_distance) VALUES (1, '2015-12-12', 179, 56, 60, 100, 70, 30.1, 20.3);
 
 SELECT * FROM user_health;
+
+-- 活动表
+CREATE TABLE activity (
+    id integer PRIMARY KEY,
+    title varchar(64),
+    a_time datetime,
+    place varchar(128),
+    info text,          -- 活动描述
+    num integer,        -- 参与人数
+    recommend_num  integer     -- 推荐的人数
+);

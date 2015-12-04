@@ -4,18 +4,40 @@
  */
 
 div.content {
-	float: left;
-	width: 85%;
-	background-color: rgba(189,79,243,0.8);
-	height: 100%;
+	float: right;
+	background-color: #FFF;
+	width: 80%;
+	height: auto;
+	padding: 20px 20px;
+	margin: 0 20px 20px;
 }
 
-.input-group-sm > .input-group-addon {
-	border-radius: 0;
-	color: white;
-	background-color: rgba(20,136,245,0.5);
+.content .title {
+	background-color: #F3726D;
+	float: left;
+	border-radius: 50%;
+	text-align: center;
+	color: #EEE;
+	line-height: 100px;
+	width: 100px;
+	height: 100px;
+	margin-right: 20px;
+}
+
+.content .info {
+	line-height: 33px;
+	height: 100px;
+}
+
+.content span {
+	color: #F3726D;
+}
+
+.content .descript {
+	margin-top: 10px;
 }
 
 .input-group {
-	margin: 20px 15%;
+	width: 70%;
+	margin: 20px auto;
 }
