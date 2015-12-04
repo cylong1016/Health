@@ -149,3 +149,27 @@ div#inputarea input[type="submit"]:hover {
 	margin-right: 10%;
 	background: #F3726D;
 }
+
+.advice {
+	width: 65%;
+	height: 45px;
+	margin: 0 auto;
+}
+
+.advice_time {
+	background: #F3726D;
+	color: #EEE;
+	font-weight: bold;
+	height: auto;
+	padding: 3px 15px;
+	margin: -20px -15px 0;
+}
+
+.advice_time span {
+	float: right;
+	margin-right: 0px;
+}
+
+.msg {
+	margin: 10px;
+}

@@ -20,6 +20,11 @@ div.box {
 	margin-top: 50px;
 }
 
+input[type="text"] {
+    outline-color: #DDD;
+	padding: 2px 3px;
+}
+
 /* 侧边栏 */
 ul.sidebar {
 	float: left;

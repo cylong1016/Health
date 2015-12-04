@@ -47,6 +47,7 @@
 		<li role="presentation" class="active"><a href="#run" data-toggle="tab">疯狂运动</a></li>
 		<li role="presentation"><a href="#group" data-toggle="tab">朋友圈</a></li>
 		<li role="presentation"><a href="#body" data-toggle="tab">我的健康</a></li>
+		<li role="presentation"><a href="#advice" data-toggle="tab">反馈建议</a></li>
 	</ul>
 	<div id="avater">
 		<img src="images/avater.jpg">
@@ -86,40 +87,47 @@
 			<div class="content">
 				<span class="title">全站排名：</span>
 				<ul class="nav nav-tabs ranking-tab">
-					<li role="presentation" class="active"><a href="#" data-toggle="tab">距离</a></li>
-					<li role="presentation"><a href="#" data-toggle="tab">时间</a></li>
+					<li role="presentation" class="active"><a href="#distance" data-toggle="tab">距离</a></li>
+					<li role="presentation"><a href="#time" data-toggle="tab">时间</a></li>
 				</ul>
-				<div class="list-group">
-					<a href="#" class="list-group-item">
-						<span class="sort-num">1</span>
-						<img class="sort-avater" src="images/avater.jpg">lsy<span class="sort-info">10公里</span></a>
-					<a href="#" class="list-group-item">
-						<span class="sort-num">2</span>
-						<img class="sort-avater" src="images/avater.jpg">cylong<span class="sort-info">9.5公里</span></a>
-					<a href="#" class="list-group-item">
-						<span class="sort-num">3</span>
-						<img class="sort-avater" src="images/avater.jpg">Morbi leo risus<span class="sort-info">8公里</span></a>
-					<a href="#" class="list-group-item">
-						<span class="sort-num">4</span>
-						<img class="sort-avater" src="images/avater.jpg">Porta ac consectetur ac<span class="sort-info">7.5公里</span></a>
-					<a href="#" class="list-group-item">
-						<span class="sort-num">5</span>
-						<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">7公里</span></a>
-					<a href="#" class="list-group-item">
-						<span class="sort-num">6</span>
-						<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">6.5公里</span></a>
-					<a href="#" class="list-group-item">
-						<span class="sort-num">7</span>
-						<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">6公里</span></a>
-					<a href="#" class="list-group-item">
-						<span class="sort-num">8</span>
-						<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">5.5公里</span></a>
-					<a href="#" class="list-group-item">
-						<span class="sort-num">9</span>
-						<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">4公里</span></a>
-					<a href="#" class="list-group-item">
-						<span class="sort-num">10</span>
-						<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">3公里</span></a>
+				<div class="tab-content">
+					<div class="tab-pane fade in active" id="distance">
+						<div class="list-group">
+							<a href="#" class="list-group-item">
+								<span class="sort-num">1</span>
+								<img class="sort-avater" src="images/avater.jpg">lsy<span class="sort-info">10公里</span></a>
+							<a href="#" class="list-group-item">
+								<span class="sort-num">2</span>
+								<img class="sort-avater" src="images/avater.jpg">cylong<span class="sort-info">9.5公里</span></a>
+							<a href="#" class="list-group-item">
+								<span class="sort-num">3</span>
+								<img class="sort-avater" src="images/avater.jpg">Morbi leo risus<span class="sort-info">8公里</span></a>
+							<a href="#" class="list-group-item">
+								<span class="sort-num">4</span>
+								<img class="sort-avater" src="images/avater.jpg">Porta ac consectetur ac<span class="sort-info">7.5公里</span></a>
+							<a href="#" class="list-group-item">
+								<span class="sort-num">5</span>
+								<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">7公里</span></a>
+							<a href="#" class="list-group-item">
+								<span class="sort-num">6</span>
+								<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">6.5公里</span></a>
+							<a href="#" class="list-group-item">
+								<span class="sort-num">7</span>
+								<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">6公里</span></a>
+							<a href="#" class="list-group-item">
+								<span class="sort-num">8</span>
+								<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">5.5公里</span></a>
+							<a href="#" class="list-group-item">
+								<span class="sort-num">9</span>
+								<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">4公里</span></a>
+							<a href="#" class="list-group-item">
+								<span class="sort-num">10</span>
+								<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">3公里</span></a>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="time">
+						时间排名
+					</div>
 				</div>
 			</div>
 		</div>
@@ -170,12 +178,40 @@
 			  <span class="title">心率：129</span>
 		  </div>
 		  <div class="content">
-			 <span class="title">血压：108/60</span>
-		 </div>
+			  <span class="title">血压：108/60</span>
+		  </div>
+	  	</div>
+		<div class="tab-pane fade" id="advice">
+			<ul class="nav nav-tabs advice">
+				<li role="presentation" class="active"><a href="#from_doctor" data-toggle="tab">来自医生</a></li>
+				<li role="presentation"><a href="#from_coach" data-toggle="tab">来自教练</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane fade in active" id="from_doctor">
+					<div class="content">
+						<div class="advice_time">
+							2015-12-13 08:08 <span>医生：lsy</span>
+						</div>
+						<div class="msg">最近体重有点升高最近体重有点升高最近体重有点升高最近体重有点升高
+							最近体重有点升高最近体重有点升高最近体重有点升高最近体重有点升高最近体重
+							有点升高最近体重有点升高最近体重有点升高最近体重有点升高，记得多锻炼，早睡早起。</div>
+					</div>
+					<div class="content">
+						<div class="advice_time">
+							2015-12-13 08:08 <span>医生：lsy</span>
+						</div>
+						<div class="msg">最近体重有点升高最近体重有点升高最近体重有点升高最近体重有点升高
+							最近体重有点升高最近体重有点升高最近体重有点升高最近体重有点升高最近体重
+							有点升高最近体重有点升高最近体重有点升高最近体重有点升高，记得多锻炼，早睡早起。</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="from_coach">
+					<div class="content">来自教练</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
-
 </body>
 <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="js/bootstrap.js"></script>

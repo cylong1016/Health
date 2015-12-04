@@ -10,6 +10,7 @@
 	min-width: 800px;
 	min-height: 50px;
 }
+
 div.navbar-header {
 	padding-left: 10%;
 }
@@ -98,4 +99,8 @@ button.list-group-item:focus {
 	border-radius: 0;
 	color: white;
 	background-color: #F3726D;
+}
+
+.input-group-sm .form-control {
+	outline-color: #F3726D;
 }
