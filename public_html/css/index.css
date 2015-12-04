@@ -13,6 +13,7 @@ div.content {
 	padding: 20px 15px;
 }
 
+/* 发布动态 */
 div#inputarea {
 	background-color: #F3726D;
 	width: 65%;
@@ -58,32 +59,6 @@ div#inputarea input[type="submit"]:hover {
 	color: #FFF;
 }
 
-div#head {
-	float: right;
-	margin-right: 10px;
-	width: 14%;
-	min-height: 200px;
-	text-align: center;
-}
-
-div#head img{
-	width: 90%;
-	border-radius: 50%;
-	box-shadow: 0 0 10px #aaa;
-}
-
-div#head a:link, a:visited {
-	font-weight: bold;
-	font-size: 14px;
-	color: #F3726D;
-	padding: 4px;
-	text-decoration: none;
-}
-
-div#head a:hover,a:active {
-	color: #F03931;
-}
-
 .title {
 	display: block;
 	color: #666;
@@ -121,7 +96,7 @@ div#head a:hover,a:active {
 	text-align: center;
 }
 
-.sort-head {
+.sort-avater {
 	width: 20px;
 	margin-right: 15px;
 }
@@ -146,36 +121,8 @@ div#head a:hover,a:active {
 	margin: 3px auto;
 }
 
-.news-item {
-	margin: 10px 0;
-	padding: 12px;
-	background-color: rgba(255,255,255, 0.3);
-}
-
-.item-name {
-	display: block;
-	color: black;
-	font-size: 15px;
-}
-
-.item-head {
-	float: left;
-	border-radius: 50%;
-	width: 40px;
-	height: 100%;
-	margin: 0 15px;
-}
-
-.item-date {
-	font-size: 12px;
-}
-
-.item-content {
-	margin-left:  70px;
-	margin-top: 10px;
-}
-
 .bmi {
+	float: left;
 	text-align: center;
 	margin-left: 10%;
 	width: 30%;
@@ -184,4 +131,8 @@ div#head a:hover,a:active {
 .bmi input[type="submit"] {
 	float: none;
 	margin: 10px 0;
+}
+
+.bmi_img {
+	margin: 20px auto;
 }

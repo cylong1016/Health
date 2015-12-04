@@ -32,6 +32,39 @@ ul.sidebar a {
 	color: #111;
 }
 
+/* 导航栏的头像 */
+.nav .avater {
+	width: 20px;
+	border-radius: 2px;
+}
+
+/* 侧面的大头像 */
+div#avater {
+	float: right;
+	margin-right: 10px;
+	width: 14%;
+	min-height: 200px;
+	text-align: center;
+}
+
+div#avater img{
+	width: 90%;
+	border-radius: 50%;
+	box-shadow: 0 0 10px #aaa;
+}
+
+div#avater a:link, a:visited {
+	font-weight: bold;
+	font-size: 14px;
+	color: #F3726D;
+	padding: 4px;
+	text-decoration: none;
+}
+
+div#avater a:hover,a:active {
+	color: #F03931;
+}
+
 /******************** 登陆界面 *********************/
 h1 {
 	font-size: 56px;
@@ -199,48 +232,73 @@ form.forgot_password {
 }
 
 .form_wrapper div.remember input {
-	float:left;
-	margin:2px 5px 0px 0px;
+	float: left;
+	margin: 2px 5px 0px 0px;
 }
 
 .form_wrapper span.error {
-	visibility:hidden;
-	color:red;
-	font-size:11px;
-	font-style:italic;
-	display:block;
-	margin:4px 30px;
+	visibility: hidden;
+	color: red;
+	font-size: 11px;
+	font-style: italic;
+	display: block;
+	margin: 4px 30px;
 }
 
 /******************** 登陆界面结束 *********************/
 
+/******************** 动态 *********************/
+.item-name {
+	display: block;
+	color: black;
+	font-size: 15px;
+}
+
+.item-avater {
+	float: left;
+	border-radius: 50%;
+	width: 40px;
+	height: 100%;
+	margin: 0 15px;
+}
+
+.item-date {
+	font-size: 12px;
+}
+
+.item-content {
+	margin-left:  70px;
+	margin-top: 10px;
+}
+/******************** 动态结束 *********************/
+
 .button {
-  float: right;
-  border: 0 none;
-  border-radius: 2px 2px 2px 2px;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 20px;
-  margin:15px 20px 10px 10px;
-  padding: 7px 10px;
-  text-transform: none;
-  transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -webkit-transition: all 0.3s ease 0s;
-  width: 100px;
-  /* auto */
-  text-align: center;
-  /* DELETE WHEN WIDTH AUTO */
+	float: right;
+	border: 0 none;
+	border-radius: 2px 2px 2px 2px;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 20px;
+	margin:15px 20px 10px 10px;
+	padding: 7px 10px;
+	text-transform: none;
+	transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	width: 100px;
+	/* auto */
+	text-align: center;
+	/* DELETE WHEN WIDTH AUTO */
 }
 
 .button.pink {
-  background: none repeat scroll 0 0 #F3726D;
-  color: white;
+	background: none repeat scroll 0 0 #F3726D;
+	color: white;
 }
 .button.pink:hover {
-  background: none repeat scroll 0 0 #303030;
-  color: white;
+	background: none repeat scroll 0 0 #303030;
+	color: white;
 }
