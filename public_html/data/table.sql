@@ -11,6 +11,8 @@ CREATE TABLE user (
     motto text,                     -- 座右铭
     docid integer DEFAULT -1,       -- 医生id,-1代表无
     coaid integer DEFAULT -1,       -- 教练id,-1代表无
+    run_time integer DEFAULT 0,     -- 运动总时间
+    run_distance integer DEFAULT 0, -- 运动总距离
     UNIQUE (name)
 );
 
@@ -27,14 +29,13 @@ SELECT * FROM user;
 CREATE TABLE user_health (
     id integer PRIMARY KEY,
     uid integer,
-    create_date date,
+    create_date date DEFAULT (datetime('now', 'localtime')),
     height double DEFAULT 0,
     weight double DEFAULT 0,
     hr integer DEFAULT 0,         -- 心率
     bph integer DEFAULT 0,        -- 收缩压
     bpl integer DEFAULT 0,        -- 舒张压
-    run_time double DEFAULT 0,    -- 运动总时间
-    run_distance double DEFAULT 0 -- 运动总距离
+    run_distance double DEFAULT 0 -- 运动距离
 );
 
 INSERT INTO user_health(uid, create_date, height, weight, hr, bph, bpl, run_time, run_distance) VALUES (1, '2015-12-12', 179, 56, 60, 100, 70, 30.1, 20.3);
@@ -45,7 +46,7 @@ SELECT * FROM user_health;
 CREATE TABLE activity (
     id integer PRIMARY KEY,
     title varchar(64),
-    a_time datetime DEFAULT (datetime('now', 'localtime')) ,
+    a_time datetime DEFAULT (datetime('now', 'localtime')),
     place varchar(128),
     info text,          -- 活动描述
     num integer DEFAULT 0,        -- 参与人数
@@ -57,10 +58,10 @@ INSERT INTO activity(title, a_time, place, info) VALUES ('activity0', '2015-12-1
 SELECT * FROM activity;
 
 -- 用户参加活动表
-CREATE TABLE user_activity {
+CREATE TABLE user_activity (
     uid integer,
-    aid integer,
-}
+    aid integer
+);
 
 INSERT INTO user_activity VALUES ('user_id', '1');
 

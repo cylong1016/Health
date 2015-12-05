@@ -17,4 +17,12 @@ function get_activity_list() {
     return $activity_list;
 }
 
+// id用户参加的活动
+function get_activity_by_id($id) {
+    global $db;
+    $sql = "SELECT DISTINCT * FROM user_activity, activity WHERE activity.id = user_activity.aid AND user_activity.uid = '$id'";
+    $activity_list = $db->execute_dql_arr($sql);
+    return $activity_list;
+}
+
 ?>
