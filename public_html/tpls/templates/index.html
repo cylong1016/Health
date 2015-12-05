@@ -11,6 +11,7 @@
 	<link href="css/bootstrap-modify.css" rel="stylesheet">
 	<link href="css/index.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/linechart.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,9 +32,9 @@
 </nav>
 <div class="container box">
 	<ul class="nav nav-tabs nav-stacked sidebar">
-		<li role="presentation" class="active"><a href="#run" data-toggle="tab">疯狂运动</a></li>
-		<li role="presentation"><a href="#group" data-toggle="tab">朋友圈</a></li>
-		<li role="presentation"><a href="#body" data-toggle="tab">我的健康</a></li>
+		<li role="presentation" class="active"><a href="#body" data-toggle="tab">我的健康</a></li>
+		<li role="presentation"><a href="#run" data-toggle="tab">疯狂运动</a></li>
+		<li role="presentation"><a href="#friendsgroup" data-toggle="tab">朋友圈</a></li>
 		<li role="presentation"><a href="#advice" data-toggle="tab">反馈建议</a></li>
 		<{$my_user_btn}>
 	</ul>
@@ -45,7 +46,7 @@
 	<div class="tab-content">
 		<span id="hint" class="success">成功</span>
 		<!-- 疯狂运动 -->
-		<div class="tab-pane fade in active" id="run">
+		<div class="tab-pane fade" id="run">
 			<div class="content">
 				<span class="title">您本周运动状况：</span>
 				<span class="subtitle">运动距离/公里</span>
@@ -69,11 +70,11 @@
 				<div class="run-total">
 					运动时间: <span class="em-big"><{$total_run['time']}></span>天
 				</div>
-				<div class="run-total">
+				<!-- <div class="run-total">
 					您的排名： <span class="em-big">181</span> <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></span>
-				</div>
+				</div> -->
 			</div>
-			<div class="content">
+			<!-- <div class="content">
 				<span class="title">全站排名：</span>
 				<ul class="nav nav-tabs ranking-tab">
 					<li role="presentation" class="active"><a href="#distance" data-toggle="tab">距离</a></li>
@@ -90,58 +91,53 @@
 								<img class="sort-avatar" src="images/avatar.jpg">cylong<span class="sort-info">9.5公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">3</span>
-								<img class="sort-avatar" src="images/avatar.jpg">Morbi leo risus<span class="sort-info">8公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">user1<span class="sort-info">8公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">4</span>
-								<img class="sort-avatar" src="images/avatar.jpg">Porta ac consectetur ac<span class="sort-info">7.5公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">user2<span class="sort-info">7.5公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">5</span>
-								<img class="sort-avatar" src="images/avatar.jpg">Vestibulum at eros<span class="sort-info">7公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">user3<span class="sort-info">7公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">6</span>
-								<img class="sort-avatar" src="images/avatar.jpg">Vestibulum at eros<span class="sort-info">6.5公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">user4<span class="sort-info">6.5公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">7</span>
-								<img class="sort-avatar" src="images/avatar.jpg">Vestibulum at eros<span class="sort-info">6公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">user5<span class="sort-info">6公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">8</span>
-								<img class="sort-avatar" src="images/avatar.jpg">Vestibulum at eros<span class="sort-info">5.5公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">user6<span class="sort-info">5.5公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">9</span>
-								<img class="sort-avatar" src="images/avatar.jpg">Vestibulum at eros<span class="sort-info">4公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">user7<span class="sort-info">4公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">10</span>
-								<img class="sort-avatar" src="images/avatar.jpg">Vestibulum at eros<span class="sort-info">3公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">user8<span class="sort-info">3公里</span></a>
 						</div>
 					</div>
 					<div class="tab-pane fade" id="time">
 						时间排名
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 		<!-- 朋友圈 -->
-		<div class="tab-pane fade" id="group">
+		<div class="tab-pane fade" id="friendsgroup">
 			<div id="inputarea">
 				<span>炫耀一下自己的运动成果吧~</span>
-				<textarea></textarea>
-				<input class="button pink" type="submit" value="发布" />
+				<textarea id="moments_text"></textarea>
+				<input class="button pink" type="submit" onclick="send_text('<{$username}>', 'moments_text', 'moments_add.php')" value="发布" />
 			</div>
-			<div class="content">
-				<img class="item-avatar" src="images/avatar.jpg"><span class="item-name">艾已成诗lsy</span>
-				<span class="item-date">10-29 13:24:45</span>
-				<div class="item-content">秋天的主旋律可以是美景、好身材，但绝对不能是秋膘和肉肉！
-				所以想减肥、塑形、增肌的亲们，快快进入我们的“跟着私教甩秋膘”专题get新技能吧~这个秋天，跟着名教一起，疯狂的甩秋膘！！！</div>
-			</div>
-			<div class="content">
-				<img class="item-avatar" src="images/avatar.jpg"><span class="item-name">cylong</span>
-				<span class="item-date">10-28 23:24:45</span>
-				<div class="item-content">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈，
-				哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
-			</div>
+			<{foreach from = $all_moments key = num item = "moments"}>
+				<div class="content">
+					<img class="item-avatar" src="<{$moments['avatar']}>"><span class="item-name"><{$moments['name']}></span>
+					<span class="item-date"><{$moments['mdate']}></span>
+					<div class="item-content"><{$moments['content']}></div>
+				</div>
+			<{/foreach}>
 		</div>
 		<!-- 身体状况 -->
-		<div class="tab-pane fade" id="body">
+		<div class="tab-pane fade in active" id="body">
 			<div class="content">
 				<span class="title">身高体重：</span>
 				<div class="bmi_img">
@@ -150,24 +146,115 @@
 				<div class="bmi">
 					<div class="input-group input-group-sm">
 						<span class="input-group-addon" id="sizing-addon3">身高</span>
-						<input type="text" class="form-control" aria-describedby="sizing-addon3" placeholder="<{$data_arr['height']}>">
+						<input id="height" type="text" class="form-control" aria-describedby="sizing-addon3" placeholder="<{$data_arr['height']}>">
 						<span class="input-group-addon" id="sizing-addon3">厘米</span>
 					</div>
 					<div class="input-group input-group-sm">
 						<span class="input-group-addon" id="sizing-addon3">体重</span>
-						<input type="text" class="form-control" aria-describedby="sizing-addon3" placeholder="<{$data_arr['weight']}>">
+						<input id="weight" type="text" class="form-control" aria-describedby="sizing-addon3" placeholder="<{$data_arr['weight']}>">
 						<span class="input-group-addon" id="sizing-addon3">公斤</span>
 					</div>
-					<input class="button pink" type="submit" value="保存"></input>
+					<input class="button pink" type="submit" onclick="calcbmi()" value="保存"></input>
 			  </div>
-			  <div class="bmi_val">BMI <{$data_arr['bmi']}></div>
+			  <div class="bmi_val">BMI <span id="bmi_val"><{$data_arr['bmi']}></span></div>
 			  <div class="clear"></div>
 		  </div>
-		  <div class="content">
-			  <span class="title">心率：<{$data_arr['hr']}></span>
+		  <div class="content chart">
+			  <span class="title">心率：<span class="em-big"><{$data_arr['hr']}></span> </span>
+			  <div class="graph__wrapper">
+				  <div class="coordinates">
+					  <span></span>
+					  <span></span>
+					  <span></span>
+					  <span></span>
+					  <span></span>
+				  </div>
+				  <svg width="315px" height="107px" viewBox="0 0 315 107" version="1.1">
+					  <defs>
+						  <linearGradient x1="0%" y1="100%" x2="100%" y2="100%" id="linearGradient-1">
+							  <stop stop-color="#2090F8" offset="0%"></stop>
+							  <stop stop-color="#01FCE4" offset="41.7610013%"></stop>
+							  <stop stop-color="#0BFF8C" offset="78.6870217%"></stop>
+							  <stop stop-color="#51FF00" offset="100%"></stop>
+						  </linearGradient>
+					  </defs>
+					  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+						  <path
+						  d="M0,95
+						  L40,68
+						  L55,81
+						  L65,76
+						  L96,86
+						  L131,19
+						  L142,23
+						  L183,2
+						  L211,22
+						  L234,71
+						  L234,83
+						  L244,83
+						  L247,88
+						  L315,100"
+						  id="Path-1" stroke="url(#linearGradient-1)" stroke-width="4" sketch:type="MSShapeGroup" class="path">
+						  </path>
+					  </g>
+				  </svg>
+			  </div>
 		  </div>
-		  <div class="content">
-			  <span class="title">血压：<{$data_arr['bph']}> / <{$data_arr['bpl']}></span>
+		  <div class="content chart">
+			  <span class="title">血压：<span class="em-big"><{$data_arr['bph']}> / <{$data_arr['bpl']}></span></span>
+			  <div class="graph__wrapper">
+				  <div class="coordinates_bp">
+					  <span></span>
+					  <span></span>
+					  <span></span>
+					  <span></span>
+					  <span></span>
+				  </div>
+				  <svg width="315px" height="107px" viewBox="0 0 315 107" version="1.1">
+					  <defs>
+						  <linearGradient x1="0%" y1="100%" x2="100%" y2="100%" id="linearGradient-1">
+							  <stop stop-color="#2090F8" offset="0%"></stop>
+							  <stop stop-color="#01FCE4" offset="41.7610013%"></stop>
+							  <stop stop-color="#0BFF8C" offset="78.6870217%"></stop>
+							  <stop stop-color="#51FF00" offset="100%"></stop>
+						  </linearGradient>
+					  </defs>
+					  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+						  <path
+						  d="M0,35
+						  L40,18
+						  L55,28
+						  L65,36
+						  L96,26
+						  L131,9
+						  L142,3
+						  L183,22
+						  L211,20
+						  L234,41
+						  L244,33
+						  L247,28
+						  L315,30"
+						  id="Path-1" stroke="url(#linearGradient-1)" stroke-width="4" sketch:type="MSShapeGroup" class="path">
+						  </path>
+						  <path
+						  d="M0,95
+						  L40,88
+						  L55,71
+						  L65,66
+						  L96,86
+						  L131,59
+						  L142,73
+						  L183,82
+						  L211,92
+						  L234,71
+						  L244,99
+						  L247,88
+						  L315,100"
+						  id="Path-1" stroke="url(#linearGradient-1)" stroke-width="4" sketch:type="MSShapeGroup" class="path">
+						  </path>
+					  </g>
+				  </svg>
+			  </div>
 		  </div>
 	  	</div>
 		<div class="tab-pane fade" id="advice">
@@ -250,7 +337,7 @@
 				<div id="inputarea">
 					<span>给 <{$user_info['name']}> 填写建议吧~</span>
 					<textarea id="advice_text_<{$user_info['id']}>"></textarea>
-					<input class="button pink" type="submit" onclick="send_advice('<{$user_info['id']}>', 'advice_text', 'save_advice.php')" value="发送" />
+					<input class="button pink" type="submit" onclick="send_text('<{$user_info['id']}>', 'advice_text_<{$user_info['id']}>', 'save_advice.php')" value="发送" />
 				</div>
 			<{/foreach}>
 		</div>
@@ -260,4 +347,35 @@
 <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/my.js"></script>
+<script>
+
+	var bmi = <{$data_arr['bmi']}>;
+	bmi += getbmiinfo(bmi);
+	var bmi_val = document.getElementById("bmi_val");
+	bmi_val.innerHTML = bmi;
+
+	function calcbmi() {
+		var h_input = document.getElementById("height");
+		var w_input = document.getElementById("weight");
+		var bmi_val = document.getElementById("bmi_val");
+		var height = h_input.value;
+		var weight = w_input.value;
+		var bmi = weight / (height * height / 10000);
+		bmi = bmi.toFixed(2);
+		bmi += getbmiinfo(bmi);
+		bmi_val.innerHTML = bmi;
+	}
+
+	function getbmiinfo(bmi) {
+		if(bmi < 18.5) {
+			return " 偏轻";
+		} else if(bmi < 24) {
+			return " 正常";
+		} else if (bmi < 28) {
+			return " 超重";
+		} else {
+			return " 肥胖";
+		}
+	}
+</script>
 </html>

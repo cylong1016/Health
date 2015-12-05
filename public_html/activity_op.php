@@ -31,10 +31,14 @@ echo $response;
 function join_ac($db, $user_id, $ac_id) {
     $sql = "INSERT INTO user_activity VALUES ('$user_id', '$ac_id')";
     $db->execute_dml($sql);
+    $sql = "UPDATE activity SET num = num + 1 WHERE id = '$ac_id'";
+    $db->execute_dml($sql);
 }
 
 function out_ac($db, $user_id, $ac_id) {
     $sql = "DELETE FROM user_activity WHERE uid = '$user_id' AND aid = '$ac_id'";
+    $db->execute_dml($sql);
+    $sql = "UPDATE activity SET num = num - 1 WHERE id = '$ac_id'";
     $db->execute_dml($sql);
 }
 

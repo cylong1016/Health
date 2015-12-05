@@ -6,8 +6,7 @@
  */
 require_once "./common/user_session.php";
 require_once "../config/smarty_init.php";
-require_once "../config/db_config.php";
-require_once "./class/DB.class.php";
+require_once "user_data.php";
 require_once "./common/common.php";
 
 $error = get_error();
@@ -17,21 +16,19 @@ $name = get_name();
 $avatar = get_avatar();
 $username = get_username();
 
-$db = new DB();
-
-$sql = "SELECT * FROM user WHERE id = '$username'";
-$res = $db->execute_dql_arr($sql);
-$docid = $res[0]["docid"];
-$coaid = $res[0]["coaid"];
-
+$user_info = get_user_info($username);
+$docid = $user_info["docid"];
+$coaid = $user_info["coaid"];
 $doc_name = get_nameById($docid);
 $coa_name = get_nameById($coaid);
-$sex = $res[0]["sex"];
-$goal = $res[0]["goal"];
-$identity = $res[0]["identity"];
-$motto = $res[0]["motto"];
+$sex = $user_info["sex"];
+$goal = $user_info["goal"];
+$identity = $user_info["identity"];
+$motto = $user_info["motto"];
 
+$my_moments = get_moments_by_id($username);
 
+$tpl->assign("my_moments", $my_moments);
 $tpl->assign("name", $name);
 $tpl->assign("avatar", $avatar);
 $tpl->assign("sex", $sex);
@@ -41,21 +38,5 @@ $tpl->assign("doc_name", $doc_name);
 $tpl->assign("coa_name", $coa_name);
 $tpl->assign("motto", $motto);
 $tpl->display("user.html");
-
-// 通过id查找name
-function get_nameById($id) {
-    global $db;
-    $sql = "SELECT * FROM user WHERE id = '$id'";
-    $res = $db->execute_dql_arr($sql);
-    if($res) {
-        $name = $res[0]["name"];
-        if(empty($name)) {
-            $name = $res[0]["id"];
-        }
-        return $name;
-    } else {
-        return "无";
-    }
-}
 
 ?>

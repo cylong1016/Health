@@ -45,20 +45,22 @@
 		<!-- 活动推荐 -->
 		<div class="tab-pane fade" id="recommend">
 			<div class="content">
-				活动推荐
+				<div class="content">
+					<div class="notdeveloped">敬请期待</div>
+				</div>
 			</div>
 		</div>
 		<!-- 全部活动 -->
 		<div class="tab-pane fade in active" id="all">
-			<div class="input-group input-group-sm">
+			<!--<div class="input-group input-group-sm">
 				<input type="text" class="form-control" aria-describedby="sizing-addon3" placeholder="搜索活动……">
 				<span class="input-group-addon" id="sizing-addon3"><a href="#"><span style="color:white" class="glyphicon glyphicon-search" aria-hidden="true"></span></a></span>
-			</div>
+			</div>-->
 			<{foreach from = $activity_list key = id item = "activity"}>
        			<div id="div_<{$activity['id']}>_all" class="content">
 					<{if $identity eq 0}>
 						<input id="<{$activity['id']}>_all" class="button pink" type="submit" onclick="AJAX('all','activity_op.php', '<{$activity['id']}>')" value="删除" />
-						<input class="button pink" type="submit" value="修改" />
+						<!-- <input class="button pink" type="submit" value="修改" /> -->
 					<{else}>
 						<{if $activity['sign'] eq 1}>
 							<input id="<{$activity['id']}>_all" class="button pink" type="submit" onclick="AJAX('all','activity_op.php', '<{$activity['id']}>')" value="退出" />
@@ -70,7 +72,7 @@
        				<div class="info">
 						<div class="time"><span>时间：</span><{$activity['a_time']}></div>
 						<div class="place"><span>地点：</span><{$activity['place']}></div>
-						<div class="num"><span>已参加人数：</span><{$activity['num']}></div>
+						<div class="num"><span>已参加人数：</span id="num"><{$activity['num']}></div>
 					</div>
 					<div class="descript"><span>详细信息：</span><{$activity['info']}></div>
 				</div>
@@ -81,8 +83,8 @@
 			<{foreach from = $user_activity key = id item = "activity"}>
        			<div id="div_<{$activity['id']}>_my" class="content">
 					<{if $identity eq 0}>
-						<input class="button pink" type="submit" value="删除" />
-						<input class="button pink" type="submit" value="修改" />
+						<input id="<{$activity['id']}>_all" class="button pink" type="submit" onclick="AJAX('all','activity_op.php', '<{$activity['id']}>')" value="删除" />
+						<!-- <input class="button pink" type="submit" value="修改" /> -->
 					<{else}>
 						<input id="<{$activity['id']}>_my" class="button pink" type="submit" onclick="AJAX('my', 'activity_op.php', '<{$activity['id']}>')" value="退出" />
 					<{/if}>
@@ -99,7 +101,9 @@
 		<!-- 历史活动 -->
 		<div class="tab-pane fade" id="history">
 			<div class="content">
-				历史活动
+				<div class="content">
+					<div class="notdeveloped">敬请期待</div>
+				</div>
 			</div>
 		</div>
 		<!-- 活动发布 -->

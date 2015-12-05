@@ -84,7 +84,7 @@ function get_user_iden($id) {
 // 获得医生建议
 function get_advice_from_doc($id) {
     global $db;
-    $sql = "SELECT * FROM d_feed_back, user WHERE d_feed_back.uid = '$id' AND d_feed_back.docid = user.id";
+    $sql = "SELECT d.id cid, u.id uid, * FROM d_feed_back d, user u WHERE d.uid = '$id' AND d.docid = u.id ORDER BY d.fbdate DESC";
     $res = $db->execute_dql_arr($sql);
     return $res;
 }
@@ -92,9 +92,60 @@ function get_advice_from_doc($id) {
 // 获得教练建议
 function get_advice_from_coa($id) {
     global $db;
-    $sql = "SELECT * FROM c_feed_back, user WHERE c_feed_back.uid = '$id' AND c_feed_back.coaid = user.id";
+    $sql = "SELECT c.id cid, u.id uid, * FROM c_feed_back c, user u WHERE c.uid = '$id' AND c.coaid = u.id ORDER BY c.fbdate DESC";
     $res = $db->execute_dql_arr($sql);
     return $res;
+}
+
+// 全部的动态
+function get_allmoments() {
+    global $db;
+    $sql = "SELECT m.id mid, u.id uid, * FROM moments m, user u WHERE m.uid = u.id ORDER BY m.mdate DESC";
+    $res = $db->execute_dql_arr($sql);
+    return $res;
+}
+
+function get_moments_by_id($id) {
+    global $db;
+    $sql = "SELECT m.id mid, u.id uid, * FROM moments m, user u WHERE m.uid = u.id AND m.uid = '$id' ORDER BY m.mdate DESC";
+    $res = $db->execute_dql_arr($sql);
+    return $res;
+}
+
+// 通过id查找name
+function get_nameById($id) {
+    global $db;
+    $sql = "SELECT * FROM user WHERE id = '$id'";
+    $res = $db->execute_dql_arr($sql);
+    if($res) {
+        $name = $res[0]["name"];
+        if(empty($name)) {
+            $name = $res[0]["id"];
+        }
+        return $name;
+    } else {
+        return "无";
+    }
+}
+
+// 通过name查找id
+function get_id_by_name($name) {
+    global $db;
+    $sql = "SELECT * FROM user WHERE name = '$name'";
+    $res = $db->execute_dql_arr($sql);
+    if($res) {
+        $id = $res[0]["id"];
+        return $id;
+    } else {
+        return "";
+    }
+}
+
+function get_user_info($id) {
+    global $db;
+    $sql = "SELECT * FROM user WHERE id = '$id'";
+    $res = $db->execute_dql_arr($sql);
+    return $res[0];
 }
 
 ?>

@@ -35,7 +35,7 @@
 <div class="container box">
 	<ul class="nav nav-tabs nav-stacked sidebar">
 		<li role="presentation" class="active"><a href="#profile" data-toggle="tab">个人资料</a></li>
-		<li role="presentation"><a href="#news" data-toggle="tab">我的动态</a></li>
+		<li role="presentation"><a href="#moments" data-toggle="tab">我的动态</a></li>
 		<li role="presentation"><a href="#friends" data-toggle="tab">我的好友</a></li>
 		<li role="presentation"><a href="#account" data-toggle="tab">我的账户</a></li>
 		<li role="presentation"><a href="#notify" data-toggle="tab">消息盒子</a></li>
@@ -47,21 +47,17 @@
 		<a href="user.php"><{$name}></a>
 	</div>
 	<div class="tab-content">
-		<div id="save_succ" class="success">保存成功</div>
+		<div id="hint" class="success">保存成功</div>
 		<!-- 我的动态 -->
-		<div class="tab-pane fade" id="news">
-			<div class="content">
-				<img class="item-avatar" src="<{$avatar}>"><span class="item-name"><{$name}></span>
-				<span class="item-date">10-28 23:24:45</span>
-				<div class="item-content">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈，
-				哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
-			</div>
-			<div class="content">
-				<img class="item-avatar" src="<{$avatar}>"><span class="item-name"><{$name}></span>
-				<span class="item-date">10-29 13:24:45</span>
-				<div class="item-content">秋天的主旋律可以是美景、好身材，但绝对不能是秋膘和肉肉！
-				所以想减肥、塑形、增肌的亲们，快快进入我们的“跟着私教甩秋膘”专题get新技能吧~这个秋天，跟着名教一起，疯狂的甩秋膘！！！</div>
-			</div>
+		<div class="tab-pane fade" id="moments">
+			<{foreach from = $my_moments key = num item = "moments"}>
+				<div id = "moments_<{$moments['mid']}>" class="content">
+					<input class="button pink" type="submit" onclick="delete_moment('<{$moments['mid']}>', 'moments_<{$moments['mid']}>', 'delete_moment.php')" value="删除" />
+					<img class="item-avatar" src="<{$avatar}>"><span class="item-name"><{$name}></span>
+					<span class="item-date"><{$moments['mdate']}></span>
+					<div class="item-content"><{$moments['content']}></div>
+				</div>
+			<{/foreach}>
 		</div>
 		<!-- 个人资料 -->
 		<div class="tab-pane fade in active" id="profile">
@@ -93,11 +89,11 @@
 						</tr>
 						<tr>
 				   			<td class="first_col">监督医生</td>
-				   			<td><input type="text" name="doctor" value="<{$doc_name}>"/></td>
+				   			<td><input type="text" name="doctor" value="<{$doc_name}>"/> <span>昵称</span></td>
 						</tr>
 						<tr>
 				   			<td class="first_col">贴身教练</td>
-				   			<td><input type="text" name="coach" value="<{$coa_name}>"/></td>
+				   			<td><input type="text" name="coach" value="<{$coa_name}>"/> <span>昵称</span></td>
 						</tr>
 						<tr>
 				   			<td class="first_col" valign="top" >座右铭</td>
@@ -115,15 +111,21 @@
 		</div>
 		<!-- 我的好友 -->
 		<div class="tab-pane fade" id="friends">
-		我的好友
+			<div class="content">
+				<div class="notdeveloped">敬请期待</div>
+			</div>
 		</div>
 		<!-- 我的账户 -->
 		<div class="tab-pane fade" id="account">
-		我的账户
+			<div class="content">
+				<div class="notdeveloped">敬请期待</div>
+			</div>
 		</div>
 		<!-- 消息盒子 -->
 		<div class="tab-pane fade" id="notify">
-		消息盒子
+			<div class="content">
+				<div class="notdeveloped">敬请期待</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -138,16 +140,16 @@
 		var iden = document.getElementById("iden_" + iden_i);
 		iden.checked = "checked";
 	}
-	var save_succ = document.getElementById("save_succ");
-	save_succ.style.visibility = "hidden";
+	var hint = document.getElementById("hint");
+	hint.style.visibility = "hidden";
 	var error = <{$error}>;
 	if(error == 1) {
 		var name_error = document.getElementById("name_error");
 		name_error.innerHTML = "昵称重复";
 		name_error.style.visibility = "visible";
 	} else if(error == 2) {	// 保存成功
-		save_succ.style.visibility = "visible";
-		hide(save_succ, 0.01);	// 几秒后消失
+		hint.style.visibility = "visible";
+		hide(hint, 0.01);	// 几秒后消失
 	}
 
 	// 检查输入是否合法

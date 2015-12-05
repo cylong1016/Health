@@ -54,8 +54,6 @@ CREATE TABLE activity (
     recommend_num  integer DEFAULT 0     -- 推荐的人数
 );
 
-INSERT INTO activity(title, a_time, place, info) VALUES ('activity0', '2015-12-10', 'nanjing', 'hhh');
-
 SELECT * FROM activity;
 
 -- 用户参加活动表
@@ -63,8 +61,6 @@ CREATE TABLE user_activity (
     uid varchar(64),
     aid varchar(64)
 );
-
-INSERT INTO user_activity VALUES ('user_id', '1');
 
 SELECT * FROM user_activity;
 
@@ -84,4 +80,12 @@ CREATE TABLE c_feed_back (
     coaid varchar(64),
     fbdate datetime DEFAULT (datetime('now', 'localtime')),
     info text
+);
+
+-- 动态
+CREATE TABLE moments (
+    id integer PRIMARY KEY,
+    uid varchar(64),
+    mdate datetime DEFAULT (datetime('now', 'localtime')),
+    content text
 );

@@ -27,9 +27,11 @@ if($iden == 2 || $iden == 3) {   // 医生或者教练
 
 $advice_from_doc = get_advice_from_doc($username);  // 来自医生的建议
 $advice_from_coa = get_advice_from_coa($username);  // 来自教练的建议
+$all_moments = get_allmoments();
 
 $tpl->assign("advice_from_doc", $advice_from_doc);
 $tpl->assign("advice_from_coa", $advice_from_coa);
+$tpl->assign("all_moments", $all_moments);
 $tpl->assign("my_user_info", $my_user_info);
 $tpl->assign("my_user_btn", $my_user_btn);
 $tpl->assign("name", $name);

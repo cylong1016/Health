@@ -187,3 +187,7 @@ div#inputarea input[type="submit"]:hover {
 	height: 25px;
 	width: 25px;
 }
+
+div .chart {
+	height: 300px;
+}

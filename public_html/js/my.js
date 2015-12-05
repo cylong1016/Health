@@ -62,9 +62,9 @@ function AJAX(page, url, data){
     send(xhr, url, "id=" + data + "&op=" + op);
 }
 
-function send_advice(uid, advice_text, url) {
-    var textarea = document.getElementById(advice_text + "_" + uid);
-    var advice_info = textarea.value;
+function send_text(uid, text_id, url) {
+    var textarea = document.getElementById(text_id);
+    var info = textarea.value;
     var xhr = createXHR();
     xhr.onreadystatechange = function(){
         msg = xhr.responseText;
@@ -75,5 +75,21 @@ function send_advice(uid, advice_text, url) {
         hide(hint, 0.02);	// 几秒后消失
         textarea.value = "";
     }
-    send(xhr, url, "uid=" + uid + "&advice_info=" + advice_info);
+    send(xhr, url, "uid=" + uid + "&info=" + info);
+}
+
+// 删除动态
+function delete_moment(m_id, div_id, url) {
+    var div = document.getElementById(div_id);
+    var xhr = createXHR();
+    xhr.onreadystatechange = function(){
+        msg = xhr.responseText;
+        hint = document.getElementById("hint");
+        hint.innerHTML = msg;
+        hint.style.visibility = "visible";
+        hint.style.opacity = 1;
+        hide(hint, 0.02);	// 几秒后消失
+        div.style.display = "none";
+    }
+    send(xhr, url, "m_id=" + m_id);
 }
