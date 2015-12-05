@@ -61,3 +61,19 @@ function AJAX(page, url, data){
     };
     send(xhr, url, "id=" + data + "&op=" + op);
 }
+
+function send_advice(uid, advice_text, url) {
+    var textarea = document.getElementById(advice_text + "_" + uid);
+    var advice_info = textarea.value;
+    var xhr = createXHR();
+    xhr.onreadystatechange = function(){
+        msg = xhr.responseText;
+        hint = document.getElementById("hint");
+        hint.innerHTML = msg;
+        hint.style.visibility = "visible";
+        hint.style.opacity = 1;
+        hide(hint, 0.02);	// 几秒后消失
+        textarea.value = "";
+    }
+    send(xhr, url, "uid=" + uid + "&advice_info=" + advice_info);
+}

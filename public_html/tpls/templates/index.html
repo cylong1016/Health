@@ -35,6 +35,7 @@
 		<li role="presentation"><a href="#group" data-toggle="tab">朋友圈</a></li>
 		<li role="presentation"><a href="#body" data-toggle="tab">我的健康</a></li>
 		<li role="presentation"><a href="#advice" data-toggle="tab">反馈建议</a></li>
+		<{$my_user_btn}>
 	</ul>
 	<div id="avatar">
 		<img src="<{$avatar}>" />
@@ -42,6 +43,7 @@
 		<a href="user.php"><{$name}></a>
 	</div>
 	<div class="tab-content">
+		<span id="hint" class="success">成功</span>
 		<!-- 疯狂运动 -->
 		<div class="tab-pane fade in active" id="run">
 			<div class="content">
@@ -62,10 +64,10 @@
 			<div class="content">
 				<span class="title">您的运动总量：</span>
 				<div class="run-total">
-					运动距离: <span class="em-big">30.5</span>公里
+					运动距离: <span class="em-big"><{$total_run['distance']}></span>公里
 				</div>
 				<div class="run-total">
-					运动时间: <span class="em-big">32.4</span>小时
+					运动时间: <span class="em-big"><{$total_run['time']}></span>天
 				</div>
 				<div class="run-total">
 					您的排名： <span class="em-big">181</span> <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></span>
@@ -132,7 +134,7 @@
 				所以想减肥、塑形、增肌的亲们，快快进入我们的“跟着私教甩秋膘”专题get新技能吧~这个秋天，跟着名教一起，疯狂的甩秋膘！！！</div>
 			</div>
 			<div class="content">
-				<img class="item-avatar" src="images/avatar.jpg"><span class="item-name"><{$name}></span>
+				<img class="item-avatar" src="images/avatar.jpg"><span class="item-name">cylong</span>
 				<span class="item-date">10-28 23:24:45</span>
 				<div class="item-content">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈，
 				哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
@@ -148,24 +150,24 @@
 				<div class="bmi">
 					<div class="input-group input-group-sm">
 						<span class="input-group-addon" id="sizing-addon3">身高</span>
-						<input type="text" class="form-control" aria-describedby="sizing-addon3" placeholder="179">
+						<input type="text" class="form-control" aria-describedby="sizing-addon3" placeholder="<{$data_arr['height']}>">
 						<span class="input-group-addon" id="sizing-addon3">厘米</span>
 					</div>
 					<div class="input-group input-group-sm">
 						<span class="input-group-addon" id="sizing-addon3">体重</span>
-						<input type="text" class="form-control" aria-describedby="sizing-addon3" placeholder="56">
+						<input type="text" class="form-control" aria-describedby="sizing-addon3" placeholder="<{$data_arr['weight']}>">
 						<span class="input-group-addon" id="sizing-addon3">公斤</span>
 					</div>
 					<input class="button pink" type="submit" value="保存"></input>
 			  </div>
-			  <div class="bmi_val">BMI 17.5 偏轻</div>
+			  <div class="bmi_val">BMI <{$data_arr['bmi']}></div>
 			  <div class="clear"></div>
 		  </div>
 		  <div class="content">
-			  <span class="title">心率：129</span>
+			  <span class="title">心率：<{$data_arr['hr']}></span>
 		  </div>
 		  <div class="content">
-			  <span class="title">血压：108/60</span>
+			  <span class="title">血压：<{$data_arr['bph']}> / <{$data_arr['bpl']}></span>
 		  </div>
 	  	</div>
 		<div class="tab-pane fade" id="advice">
@@ -175,31 +177,87 @@
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane fade in active" id="from_doctor">
-					<div class="content">
-						<div class="advice_time">
-							2015-12-13 08:08 <span>医生：<img src="images/avatar.jpg"> lsy</span>
+					<{foreach from = $advice_from_doc key = num item = "advice"}>
+						<div class="content">
+							<div class="advice_title">
+								<{$advice['fbdate']}> <span>医生：<img src="images/avatar.jpg"> <{$advice['name']}></span>
+							</div>
+							<div class="msg"><{$advice['info']}></div>
 						</div>
-						<div class="msg">最近体重有点升高最近体重有点升高最近体重有点升高最近体重有点升高
-							最近体重有点升高最近体重有点升高最近体重有点升高最近体重有点升高最近体重
-							有点升高最近体重有点升高最近体重有点升高最近体重有点升高，记得多锻炼，早睡早起。</div>
-					</div>
-					<div class="content">
-						<div class="advice_time">
-							2015-12-13 08:08 <span>医生：<img src="images/avatar.jpg"> lsy</span>
-						</div>
-						<div class="msg">最近体重有点升高最近体重有点升高最近体重有点升高最近体重有点升高
-							最近体重有点升高最近体重有点升高最近体重有点升高最近体重有点升高最近体重
-							有点升高最近体重有点升高最近体重有点升高最近体重有点升高，记得多锻炼，早睡早起。</div>
-					</div>
+					<{/foreach}>
 				</div>
 				<div class="tab-pane fade" id="from_coach">
-					<div class="content">来自教练</div>
+					<{foreach from = $advice_from_coa key = num item = "advice"}>
+						<div class="content">
+							<div class="advice_title">
+								<{$advice['fbdate']}> <span>教练：<img src="images/avatar.jpg"> <{$advice['name']}></span>
+							</div>
+							<div class="msg"><{$advice['info']}></div>
+						</div>
+					<{/foreach}>
 				</div>
 			</div>
+		</div>
+		<div class="tab-pane fade" id="my_user">
+			<{foreach from = $my_user_info key = num item = "user_info"}>
+				<div class="content">
+					<div class="advice_title"><{$user_info['name']}> &nbsp;最近7天数据</div>
+					<div class="msg">
+						<table class="user_info">
+							<tr>
+								<td>运动量</td>
+								<td>4</td>
+								<td>5</td>
+								<td>3</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+							</tr>
+							<tr>
+								<td>心率</td>
+								<td>90</td>
+								<td>112</td>
+								<td>98</td>
+								<td>123</td>
+								<td>118</td>
+								<td>98</td>
+								<td>127</td>
+							</tr>
+							<tr>
+								<td>收缩压</td>
+								<td>112</td>
+								<td>109</td>
+								<td>97</td>
+								<td>111</td>
+								<td>102</td>
+								<td>98</td>
+								<td>103</td>
+							</tr>
+							<tr>
+								<td>舒张压</td>
+								<td>78</td>
+								<td>84</td>
+								<td>67</td>
+								<td>68</td>
+								<td>88</td>
+								<td>90</td>
+								<td>71</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div id="inputarea">
+					<span>给 <{$user_info['name']}> 填写建议吧~</span>
+					<textarea id="advice_text_<{$user_info['id']}>"></textarea>
+					<input class="button pink" type="submit" onclick="send_advice('<{$user_info['id']}>', 'advice_text', 'save_advice.php')" value="发送" />
+				</div>
+			<{/foreach}>
 		</div>
 	</div>
 </div>
 </body>
 <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/my.js"></script>
 </html>

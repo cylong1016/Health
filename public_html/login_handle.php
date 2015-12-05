@@ -1,6 +1,6 @@
 <?php
-require "../config/db_config.php";
-require "./class/DB.class.php";
+require_once "../config/db_config.php";
+require_once "./class/DB.class.php";
 
 // 接收用户名密码
 $username = $_POST['username'];

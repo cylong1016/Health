@@ -4,11 +4,11 @@
  * @author: cylong
  * 用户界面
  */
-require "./common/user_session.php";
-require "../config/smarty_init.php";
-require "../config/db_config.php";
-require "./class/DB.class.php";
-require "./common/common.php";
+require_once "./common/user_session.php";
+require_once "../config/smarty_init.php";
+require_once "../config/db_config.php";
+require_once "./class/DB.class.php";
+require_once "./common/common.php";
 
 $error = get_error();
 $tpl->assign("error", $error);

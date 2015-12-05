@@ -156,7 +156,7 @@ div#inputarea input[type="submit"]:hover {
 	margin: 0 auto;
 }
 
-.advice_time {
+.advice_title {
 	background: #F3726D;
 	color: #EEE;
 	font-weight: bold;
@@ -165,16 +165,25 @@ div#inputarea input[type="submit"]:hover {
 	margin: -20px -15px 0;
 }
 
-.advice_time span {
+.advice_title span {
 	float: right;
 	margin-right: 0px;
 }
 
-.advice_time img {
+.advice_title img {
 	border-radius: 2px;
 	width: 20px;
 }
 
 .msg {
 	margin: 10px;
+}
+
+.user_info {
+	width: 100%;
+}
+
+.user_info td {
+	height: 25px;
+	width: 25px;
 }

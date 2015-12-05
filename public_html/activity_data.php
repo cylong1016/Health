@@ -4,8 +4,8 @@
  * @author: cylong
  * 读取activity数据
  */
-require "../config/db_config.php";
-require "./class/DB.class.php";
+require_once "../config/db_config.php";
+require_once "./class/DB.class.php";
 
 $db = new DB();
 

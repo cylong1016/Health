@@ -4,10 +4,11 @@
  * @author: cylong
  * 活动管理界面
  */
-require "./common/user_session.php";
-require "../config/smarty_init.php";
-require "./common/common.php";
-require "activity_data.php";
+require_once "./common/user_session.php";
+require_once "user_data.php";
+require_once "../config/smarty_init.php";
+require_once "./common/common.php";
+require_once "activity_data.php";
 
 $username = get_username();
 $name = get_name();
@@ -20,9 +21,7 @@ $error = get_error();
 $tpl->assign("error", $error);
 
 // 判断是否是管理员
-$sql = "SELECT identity FROM user WHERE id = '$username'";
-$res_iden = $db->execute_dql_arr($sql);
-$identity = $res_iden[0]["identity"];
+$identity = get_user_iden($username);
 $add_activity = "";
 $form_activity = "";
 $isAdmin = ($identity == 0);
@@ -55,9 +54,6 @@ if($isAdmin) {  // 是管理员
     $form_activity .= "</table>";
     $form_activity .= "</form>";
 }
-$tpl->assign("identity", $identity);
-$tpl->assign("add_activity", $add_activity);
-$tpl->assign("form_activity", $form_activity);
 
 // 全部活动
 $activity_list = get_activity_list();
@@ -82,6 +78,9 @@ function join_sign($activity_list, $user_activity) {
     return $activity_list;
 }
 
+$tpl->assign("identity", $identity);
+$tpl->assign("add_activity", $add_activity);
+$tpl->assign("form_activity", $form_activity);
 $tpl->assign("user_activity", $user_activity);
 $tpl->assign("activity_list", $activity_list);
 $tpl->display("activity.html");

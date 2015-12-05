@@ -5,8 +5,8 @@
  * 添加活动
  */
 
-require "../config/db_config.php";
-require "./class/DB.class.php";
+require_once "../config/db_config.php";
+require_once "./class/DB.class.php";
 
 $title = $_POST["title"];
 $time = $_POST["time"];

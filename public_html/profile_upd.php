@@ -4,10 +4,10 @@
  * @author: cylong
  * 用户基本信息修改
  */
-require "../config/db_config.php";
-require "./class/DB.class.php";
-require "./common/user_session.php";
-require "../config/smarty_init.php";
+require_once "../config/db_config.php";
+require_once "./class/DB.class.php";
+require_once "./common/user_session.php";
+require_once "../config/smarty_init.php";
 
 $username = get_username();
 $name = $_POST["name"];

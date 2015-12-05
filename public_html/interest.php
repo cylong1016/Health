@@ -4,8 +4,8 @@
  * @author: cylong
  * 兴趣组界面
  */
-require "./common/user_session.php";
-require "../config/smarty_init.php";
+require_once "./common/user_session.php";
+require_once "../config/smarty_init.php";
 
 $name = get_name();
 $avatar = get_avatar();

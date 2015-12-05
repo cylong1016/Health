@@ -1,7 +1,7 @@
 
 -- 用户表
 CREATE TABLE user (
-    id varchar PRIMARY KEY,
+    id varchar(64) PRIMARY KEY,
     name varchar(64),
     pass varchar(64),
     identity integer DEFAULT 1,     -- 0:管理员;1:普通用户;2:医生;3:教练
@@ -9,10 +9,10 @@ CREATE TABLE user (
     avatar varchar(64) DEFAULT "images/default.jpg",
     sex integer DEFAULT 0,          -- 0:男;1:女
     motto text,                     -- 座右铭
-    docid integer DEFAULT -1,       -- 医生id,-1代表无
-    coaid integer DEFAULT -1,       -- 教练id,-1代表无
-    run_time integer DEFAULT 0,     -- 运动总时间
-    run_distance integer DEFAULT 0, -- 运动总距离
+    docid varchar(64) DEFAULT -1,       -- 医生id,-1代表无
+    coaid varchar(64) DEFAULT -1,       -- 教练id,-1代表无
+    run_time integer DEFAULT 0,     -- 运动总时间/天
+    run_distance integer DEFAULT 0, -- 运动总距离/公里
     UNIQUE (name)
 );
 
@@ -22,13 +22,14 @@ INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coa
 INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid) VALUES ('doc_id1', 'doc_name1', 'doc_pass1', 2, 0, 'images/doctor.jpg', 1, 'I am a doctor1', -1, -1);
 INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid) VALUES ('coa_id1', 'coa_name1', 'coa_pass1', 3, 0, 'images/coach.jpg', 0, 'I am a coach1', -1, -1);
 INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid) VALUES ('user_id', 'user_name', 'user_pass', 1, 40, 'images/user.jpg', 0, 'I am a user', "doc_id", "coa_id");
+INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid) VALUES ('user_id1', 'user_name1', 'user_pass1', 1, 40, 'images/user.jpg', 0, 'I am a user1', "doc_id", "coa_id");
 INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid) VALUES ('admin', 'admin', 'admin', 0, 0, 'images/admin.jpg', 0, 'I am a admin', -1, -1);
 SELECT * FROM user;
 
 -- 用户健康表
 CREATE TABLE user_health (
     id integer PRIMARY KEY,
-    uid integer,
+    uid varchar(64),
     create_date date DEFAULT (datetime('now', 'localtime')),
     height double DEFAULT 0,
     weight double DEFAULT 0,
@@ -48,8 +49,8 @@ CREATE TABLE activity (
     title varchar(64),
     a_time datetime DEFAULT (datetime('now', 'localtime')),
     place varchar(128),
-    info text,          -- 活动描述
-    num integer DEFAULT 0,        -- 参与人数
+    info text,                      -- 活动描述
+    num integer DEFAULT 0,          -- 参与人数
     recommend_num  integer DEFAULT 0     -- 推荐的人数
 );
 
@@ -59,10 +60,28 @@ SELECT * FROM activity;
 
 -- 用户参加活动表
 CREATE TABLE user_activity (
-    uid integer,
-    aid integer
+    uid varchar(64),
+    aid varchar(64)
 );
 
 INSERT INTO user_activity VALUES ('user_id', '1');
 
 SELECT * FROM user_activity;
+
+-- 医生的反馈表
+CREATE TABLE d_feed_back (
+    id integer PRIMARY KEY,
+    uid varchar(64),
+    docid varchar(64),
+    fbdate datetime DEFAULT (datetime('now', 'localtime')),
+    info text
+);
+
+-- 教练的反馈表
+CREATE TABLE c_feed_back (
+    id integer PRIMARY KEY,
+    uid varchar(64),
+    coaid varchar(64),
+    fbdate datetime DEFAULT (datetime('now', 'localtime')),
+    info text
+);
