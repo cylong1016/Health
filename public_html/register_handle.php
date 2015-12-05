@@ -17,6 +17,7 @@ if($bool) {
     session_start();
     $_SESSION['username'] = $username;  // 注册id
     $_SESSION['name'] = $username;      // 昵称用注册账号代替
+    $_SESSION['avatar'] = "images/default.jpg";      // 默认头像
     insertIntoDB($db, $username, $password);
     header("location: index.php");
 }

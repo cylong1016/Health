@@ -16,19 +16,18 @@ div.content {
 	width: 100%;
 }
 
-.profile_list tr {
-	height: 40px;
+.profile_list td {
+    padding: 20px;
 }
 
 .profile_list .first_col {
 	text-align: right;
 	width: 30%;
-	padding: 20px;
 }
 
 .profile_list input[type="text"] {
     border: 1px solid #CCCCCC;
-    width: 100px;
+    width: 90px;
     padding: 0 5px;
 }
 
@@ -38,12 +37,11 @@ div.content {
     padding: 0;
 }
 
+.profile_list input[name="name"] {
+    width: 130px;
+}
+
 .profile_list textarea {
     width: 90%;
 	min-height: 80px;
-	margin-top: 8px;
-	padding: 3px 4px;
-	resize: none;
-	outline-color: #DDD;
-	border-color: #CCC;
 }

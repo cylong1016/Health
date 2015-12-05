@@ -38,13 +38,13 @@ ul.sidebar a {
 }
 
 /* 导航栏的头像 */
-.nav .avater {
+.nav .avatar {
 	width: 20px;
 	border-radius: 2px;
 }
 
 /* 侧面的大头像 */
-div#avater {
+div#avatar {
 	float: right;
 	margin-right: 10px;
 	width: 14%;
@@ -52,13 +52,13 @@ div#avater {
 	text-align: center;
 }
 
-div#avater img{
+div#avatar img{
 	width: 90%;
 	border-radius: 50%;
 	box-shadow: 0 0 10px #aaa;
 }
 
-div#avater a:link, a:visited {
+div#avatar a:link, a:visited {
 	font-weight: bold;
 	font-size: 14px;
 	color: #F3726D;
@@ -66,7 +66,7 @@ div#avater a:link, a:visited {
 	text-decoration: none;
 }
 
-div#avater a:hover,a:active {
+div#avatar a:hover,a:active {
 	color: #F03931;
 }
 
@@ -259,7 +259,7 @@ form.forgot_password {
 	font-size: 15px;
 }
 
-.item-avater {
+.item-avatar {
 	float: left;
 	border-radius: 50%;
 	width: 40px;
@@ -306,4 +306,31 @@ form.forgot_password {
 .button.pink:hover {
 	background: none repeat scroll 0 0 #303030;
 	color: white;
+}
+
+.error {
+	visibility: hidden;
+	color: red;
+	font-size: 11px;
+	font-style: italic;
+	margin: 4px 30px;
+}
+
+textarea {
+	padding: 3px 4px;
+	resize: none;
+	outline-color: #DDD;
+	border-color: #CCC;
+}
+
+.success {
+    visibility: hidden;
+	background-color: #F3726D;
+	text-align: center;
+	line-height: 30px;
+    display: block;
+    color: #EEE;
+	width: 100%;
+	height: 30px;
+    margin: -30px auto 0;
 }

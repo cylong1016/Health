@@ -25,20 +25,7 @@
 			<li><a href="interest.php">兴趣组 </a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#"><img class="avater" src="images/avater.jpg"> <{$name}> <b class="caret"></b></a>
-				<ul role="menu" class="dropdown-menu">
-					<li><a href="user.php">我的主页</a></li>
-					<li><a href="#">个人资料</a></li>
-					<li><a href="#">我的好友</a></li>
-					<li><a href="#">我的账户</a></li>
-					<li class="divider"></li>
-					<li><a href="#">退出登录</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a>
-			</li>
+			<li><a href="user.php"><img class="avatar" src="<{$avatar}>"> <{$name}></a></li>
 		</ul>
 	</div>
 </nav>
@@ -49,10 +36,10 @@
 		<li role="presentation"><a href="#body" data-toggle="tab">我的健康</a></li>
 		<li role="presentation"><a href="#advice" data-toggle="tab">反馈建议</a></li>
 	</ul>
-	<div id="avater">
-		<img src="images/avater.jpg">
+	<div id="avatar">
+		<img src="<{$avatar}>" />
 		<br><br>
-		<a href="user.php">笑话人生cylong</a>
+		<a href="user.php"><{$name}></a>
 	</div>
 	<div class="tab-content">
 		<!-- 疯狂运动 -->
@@ -95,34 +82,34 @@
 						<div class="list-group">
 							<a href="#" class="list-group-item">
 								<span class="sort-num">1</span>
-								<img class="sort-avater" src="images/avater.jpg">lsy<span class="sort-info">10公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">lsy<span class="sort-info">10公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">2</span>
-								<img class="sort-avater" src="images/avater.jpg">cylong<span class="sort-info">9.5公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">cylong<span class="sort-info">9.5公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">3</span>
-								<img class="sort-avater" src="images/avater.jpg">Morbi leo risus<span class="sort-info">8公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">Morbi leo risus<span class="sort-info">8公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">4</span>
-								<img class="sort-avater" src="images/avater.jpg">Porta ac consectetur ac<span class="sort-info">7.5公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">Porta ac consectetur ac<span class="sort-info">7.5公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">5</span>
-								<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">7公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">Vestibulum at eros<span class="sort-info">7公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">6</span>
-								<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">6.5公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">Vestibulum at eros<span class="sort-info">6.5公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">7</span>
-								<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">6公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">Vestibulum at eros<span class="sort-info">6公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">8</span>
-								<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">5.5公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">Vestibulum at eros<span class="sort-info">5.5公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">9</span>
-								<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">4公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">Vestibulum at eros<span class="sort-info">4公里</span></a>
 							<a href="#" class="list-group-item">
 								<span class="sort-num">10</span>
-								<img class="sort-avater" src="images/avater.jpg">Vestibulum at eros<span class="sort-info">3公里</span></a>
+								<img class="sort-avatar" src="images/avatar.jpg">Vestibulum at eros<span class="sort-info">3公里</span></a>
 						</div>
 					</div>
 					<div class="tab-pane fade" id="time">
@@ -139,13 +126,13 @@
 				<input class="button pink" type="submit" value="发布" />
 			</div>
 			<div class="content">
-				<img class="item-avater" src="images/avater.jpg"><span class="item-name">艾已成诗lsy</span>
+				<img class="item-avatar" src="images/avatar.jpg"><span class="item-name">艾已成诗lsy</span>
 				<span class="item-date">10-29 13:24:45</span>
 				<div class="item-content">秋天的主旋律可以是美景、好身材，但绝对不能是秋膘和肉肉！
 				所以想减肥、塑形、增肌的亲们，快快进入我们的“跟着私教甩秋膘”专题get新技能吧~这个秋天，跟着名教一起，疯狂的甩秋膘！！！</div>
 			</div>
 			<div class="content">
-				<img class="item-avater" src="images/avater.jpg"><span class="item-name">笑话人生cylong</span>
+				<img class="item-avatar" src="images/avatar.jpg"><span class="item-name"><{$name}></span>
 				<span class="item-date">10-28 23:24:45</span>
 				<div class="item-content">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈，
 				哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
@@ -190,7 +177,7 @@
 				<div class="tab-pane fade in active" id="from_doctor">
 					<div class="content">
 						<div class="advice_time">
-							2015-12-13 08:08 <span>医生：lsy</span>
+							2015-12-13 08:08 <span>医生：<img src="images/avatar.jpg"> lsy</span>
 						</div>
 						<div class="msg">最近体重有点升高最近体重有点升高最近体重有点升高最近体重有点升高
 							最近体重有点升高最近体重有点升高最近体重有点升高最近体重有点升高最近体重
@@ -198,7 +185,7 @@
 					</div>
 					<div class="content">
 						<div class="advice_time">
-							2015-12-13 08:08 <span>医生：lsy</span>
+							2015-12-13 08:08 <span>医生：<img src="images/avatar.jpg"> lsy</span>
 						</div>
 						<div class="msg">最近体重有点升高最近体重有点升高最近体重有点升高最近体重有点升高
 							最近体重有点升高最近体重有点升高最近体重有点升高最近体重有点升高最近体重

@@ -41,3 +41,23 @@ div.content {
 	width: 70%;
 	margin: 20px auto;
 }
+
+/* 发布活动表格 */
+.add_activity {
+	width: 100%;
+}
+
+.add_activity td {
+    padding: 20px;
+}
+
+.add_activity .first_col {
+	text-align: right;
+	width: 20%;
+	padding: 20px;
+}
+
+.add_activity textarea {
+    width: 90%;
+	min-height: 200px;
+}

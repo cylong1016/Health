@@ -1,21 +1,26 @@
 
 -- 用户表
 CREATE TABLE user (
-    id integer PRIMARY KEY,
+    id varchar PRIMARY KEY,
     name varchar(64),
     pass varchar(64),
-    identity integer,   -- 0:管理员;1:普通用户;2:医生;3:教练
-    goal double,       -- 本周运动目标/公里
-    avatar varchar(64),
-    sex integer,        -- 0:男;1:女
-    motto text,         -- 座右铭
-    docid integer,      -- 医生id,-1代表无
-    coaid integer       -- 教练id,-1代表无
+    identity integer DEFAULT 1,     -- 0:管理员;1:普通用户;2:医生;3:教练
+    goal double DEFAULT 0,          -- 本周运动目标/公里
+    avatar varchar(64) DEFAULT "images/default.jpg",
+    sex integer DEFAULT 0,          -- 0:男;1:女
+    motto text,                     -- 座右铭
+    docid integer DEFAULT -1,       -- 医生id,-1代表无
+    coaid integer DEFAULT -1,       -- 教练id,-1代表无
+    UNIQUE (name)
 );
 
-INSERT INTO user (name, pass, identity, goal, avatar, sex, motto, docid, coaid) VALUES ('cylong', 'cyl941016', 1, 10, '', 0, '好好运动', -1, -1);
-INSERT INTO user (name, pass, identity, goal, avatar, sex, motto, docid, coaid) VALUES ('cylong1', 'cyl941016', 1, 10, '', 0, '天天向上', -1, -1);
-
+INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid) VALUES ('cyl19941016', 'cylong', 'cyl941016', 1, 10, 'images/avatar.jpg', 0, 'run run run', -1, -1);
+INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid) VALUES ('doc_id', 'doc_name', 'doc_pass', 2, 0, 'images/doctor.jpg', 1, 'I am a doctor', -1, -1);
+INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid) VALUES ('coa_id', 'coa_name', 'coa_pass', 3, 0, 'images/coach.jpg', 0, 'I am a coach', -1, -1);
+INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid) VALUES ('doc_id1', 'doc_name1', 'doc_pass1', 2, 0, 'images/doctor.jpg', 1, 'I am a doctor1', -1, -1);
+INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid) VALUES ('coa_id1', 'coa_name1', 'coa_pass1', 3, 0, 'images/coach.jpg', 0, 'I am a coach1', -1, -1);
+INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid) VALUES ('user_id', 'user_name', 'user_pass', 1, 40, 'images/user.jpg', 0, 'I am a user', "doc_id", "coa_id");
+INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid) VALUES ('admin', 'admin', 'admin', 0, 0, 'images/admin.jpg', 0, 'I am a admin', -1, -1);
 SELECT * FROM user;
 
 -- 用户健康表
@@ -23,16 +28,16 @@ CREATE TABLE user_health (
     id integer PRIMARY KEY,
     uid integer,
     create_date date,
-    height double,
-    weight double,
-    hr integer,         -- 心率
-    bph integer,        -- 收缩压
-    bpl integer,        -- 舒张压
-    run_time double,    -- 运动总时间
-    run_distance double -- 运动总距离
+    height double DEFAULT 0,
+    weight double DEFAULT 0,
+    hr integer DEFAULT 0,         -- 心率
+    bph integer DEFAULT 0,        -- 收缩压
+    bpl integer DEFAULT 0,        -- 舒张压
+    run_time double DEFAULT 0,    -- 运动总时间
+    run_distance double DEFAULT 0 -- 运动总距离
 );
 
-INSERT INTo user_health(uid, create_date, height, weight, hr, bph, bpl, run_time, run_distance) VALUES (1, '2015-12-12', 179, 56, 60, 100, 70, 30.1, 20.3);
+INSERT INTO user_health(uid, create_date, height, weight, hr, bph, bpl, run_time, run_distance) VALUES (1, '2015-12-12', 179, 56, 60, 100, 70, 30.1, 20.3);
 
 SELECT * FROM user_health;
 
@@ -40,9 +45,23 @@ SELECT * FROM user_health;
 CREATE TABLE activity (
     id integer PRIMARY KEY,
     title varchar(64),
-    a_time datetime,
+    a_time datetime DEFAULT (datetime('now', 'localtime')) ,
     place varchar(128),
     info text,          -- 活动描述
-    num integer,        -- 参与人数
-    recommend_num  integer     -- 推荐的人数
+    num integer DEFAULT 0,        -- 参与人数
+    recommend_num  integer DEFAULT 0     -- 推荐的人数
 );
+
+INSERT INTO activity(title, a_time, place, info) VALUES ('activity0', '2015-12-10', 'nanjing', 'hhh');
+
+SELECT * FROM activity;
+
+-- 用户参加活动表
+CREATE TABLE user_activity {
+    uid integer,
+    aid integer,
+}
+
+INSERT INTO user_activity VALUES ('user_id', '1');
+
+SELECT * FROM user_activity;
