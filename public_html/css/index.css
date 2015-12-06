@@ -193,3 +193,14 @@ div#inputarea input[type="submit"]:hover {
 div .chart {
 	height: 300px;
 }
+
+.upfile {
+	width: 50%;
+}
+
+.upfile input[type="submit"] {
+	font-size: 12px;
+	line-height: 25px;
+	width: 0px;
+	height: 25px;
+}

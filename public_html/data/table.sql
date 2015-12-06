@@ -16,14 +16,13 @@ CREATE TABLE user (
     UNIQUE (name)
 );
 
-INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid, run_time, run_distance) VALUES ('cyl19941016', 'cylong', 'cyl941016', 1, 10, 'images/avatar.jpg', 0, 'run run run', -1, -1, 43, 67);
+INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid, run_time, run_distance) VALUES ('cyl19941016', 'cylong', 'cyl941016', 1, 10, 'images/avatar.jpg', 0, 'run run run', "doc_id", "coa_id", 43, 67);
 INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid, run_time, run_distance) VALUES ('doc_id', 'doc_name', 'doc_pass', 2, 0, 'images/doctor.jpg', 1, 'I am a doctor', -1, -1, 31, 89);
 INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid, run_time, run_distance) VALUES ('coa_id', 'coa_name', 'coa_pass', 3, 0, 'images/coach.jpg', 0, 'I am a coach', -1, -1, 3, 6);
 INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid, run_time, run_distance) VALUES ('doc_id1', 'doc_name1', 'doc_pass1', 2, 0, 'images/doctor.jpg', 1, 'I am a doctor1', -1, -1, 56, 23);
 INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid, run_time, run_distance) VALUES ('coa_id1', 'coa_name1', 'coa_pass1', 3, 0, 'images/coach.jpg', 0, 'I am a coach1', -1, -1, 90, 93);
 INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid, run_time, run_distance) VALUES ('user_id', 'user_name', 'user_pass', 1, 40, 'images/user.jpg', 0, 'I am a user', "doc_id", "coa_id", 62, 46);
-INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid, run_time, run_distance) VALUES ('user_id1', 'user_name1', 'user_pass1', 1, 40, 'images/user.jpg', 0, 'I am a user1', "doc_id", "coa_id", 84, 78);
-INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid, run_time, run_distance) VALUES ('admin', 'admin', 'admin', 0, 0, 'images/admin.jpg', 0, 'I am a admin', -1, -1);
+INSERT INTO user (id, name, pass, identity, goal, avatar, sex, motto, docid, coaid) VALUES ('admin', 'admin', 'admin', 0, 0, 'images/admin.jpg', 0, 'I am a admin', -1, -1);
 SELECT * FROM user;
 
 -- 用户健康表
