@@ -57,6 +57,8 @@ if($isAdmin) {  // 是管理员
 
 // 全部活动
 $activity_list = get_activity_list();
+// 历史活动活动
+$history_act = get_history_list();
 
 // 用户参与的活动
 $user_activity = get_activity_by_id($username);
@@ -82,6 +84,7 @@ $tpl->assign("identity", $identity);
 $tpl->assign("add_activity", $add_activity);
 $tpl->assign("form_activity", $form_activity);
 $tpl->assign("user_activity", $user_activity);
+$tpl->assign("history_act", $history_act);
 $tpl->assign("activity_list", $activity_list);
 $tpl->display("activity.html");
 ?>

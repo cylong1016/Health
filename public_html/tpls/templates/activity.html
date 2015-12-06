@@ -100,11 +100,17 @@
 		</div>
 		<!-- 历史活动 -->
 		<div class="tab-pane fade" id="history">
-			<div class="content">
-				<div class="content">
-					<div class="notdeveloped">敬请期待</div>
+			<{foreach from = $history_act key = id item = "activity"}>
+       			<div id="div_<{$activity['id']}>_all" class="content">
+					<div class="title"><{$activity['title']}></div>
+       				<div class="info">
+						<div class="time"><span>时间：</span><{$activity['a_time']}></div>
+						<div class="place"><span>地点：</span><{$activity['place']}></div>
+						<div class="num"><span>已参加人数：</span id="num"><{$activity['num']}></div>
+					</div>
+					<div class="descript"><span>详细信息：</span><{$activity['info']}></div>
 				</div>
-			</div>
+			<{/foreach}>
 		</div>
 		<!-- 活动发布 -->
 		<div class="tab-pane fade" id="add">

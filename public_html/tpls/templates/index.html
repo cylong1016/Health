@@ -65,16 +65,14 @@
 			<div class="content">
 				<span class="title">您的运动总量：</span>
 				<div class="run-total">
-					运动距离: <span class="em-big"><{$total_run['distance']}></span>公里
+					运动距离: <span class="em-big"><{$total_run['distance']}></span>/公里 &nbsp;&nbsp; 排名： <span class="em-big"><{$user_distance_rank}></span>
 				</div>
 				<div class="run-total">
-					运动时间: <span class="em-big"><{$total_run['time']}></span>天
+					运动时间: <span class="em-big"><{$total_run['time']}></span>/天 &nbsp&nbsp 排名： <span class="em-big"><{$user_time_rank}></span>
 				</div>
-				<!-- <div class="run-total">
-					您的排名： <span class="em-big">181</span> <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></span>
-				</div> -->
+				<div class="clear"></div>
 			</div>
-			<!-- <div class="content">
+			<div class="content">
 				<span class="title">全站排名：</span>
 				<ul class="nav nav-tabs ranking-tab">
 					<li role="presentation" class="active"><a href="#distance" data-toggle="tab">距离</a></li>
@@ -83,43 +81,28 @@
 				<div class="tab-content">
 					<div class="tab-pane fade in active" id="distance">
 						<div class="list-group">
-							<a href="#" class="list-group-item">
-								<span class="sort-num">1</span>
-								<img class="sort-avatar" src="images/avatar.jpg">lsy<span class="sort-info">10公里</span></a>
-							<a href="#" class="list-group-item">
-								<span class="sort-num">2</span>
-								<img class="sort-avatar" src="images/avatar.jpg">cylong<span class="sort-info">9.5公里</span></a>
-							<a href="#" class="list-group-item">
-								<span class="sort-num">3</span>
-								<img class="sort-avatar" src="images/avatar.jpg">user1<span class="sort-info">8公里</span></a>
-							<a href="#" class="list-group-item">
-								<span class="sort-num">4</span>
-								<img class="sort-avatar" src="images/avatar.jpg">user2<span class="sort-info">7.5公里</span></a>
-							<a href="#" class="list-group-item">
-								<span class="sort-num">5</span>
-								<img class="sort-avatar" src="images/avatar.jpg">user3<span class="sort-info">7公里</span></a>
-							<a href="#" class="list-group-item">
-								<span class="sort-num">6</span>
-								<img class="sort-avatar" src="images/avatar.jpg">user4<span class="sort-info">6.5公里</span></a>
-							<a href="#" class="list-group-item">
-								<span class="sort-num">7</span>
-								<img class="sort-avatar" src="images/avatar.jpg">user5<span class="sort-info">6公里</span></a>
-							<a href="#" class="list-group-item">
-								<span class="sort-num">8</span>
-								<img class="sort-avatar" src="images/avatar.jpg">user6<span class="sort-info">5.5公里</span></a>
-							<a href="#" class="list-group-item">
-								<span class="sort-num">9</span>
-								<img class="sort-avatar" src="images/avatar.jpg">user7<span class="sort-info">4公里</span></a>
-							<a href="#" class="list-group-item">
-								<span class="sort-num">10</span>
-								<img class="sort-avatar" src="images/avatar.jpg">user8<span class="sort-info">3公里</span></a>
+							<{foreach from = $user_orgerby_distance key = num item = "user"}>
+								<a href="#" class="list-group-item">
+									<span class="sort-num"><{$num + 1}></span>
+									<img class="sort-avatar" src="<{$user['avatar']}>"> <{$user['name']}>
+									<span class="sort-info"><{$user['run_distance']}> 公里</span>
+								</a>
+							<{/foreach}>
 						</div>
 					</div>
 					<div class="tab-pane fade" id="time">
-						时间排名
+						<div class="list-group">
+							<{foreach from = $user_orgerby_time key = num item = "user"}>
+								<a href="#" class="list-group-item">
+									<span class="sort-num"><{$num + 1}></span>
+									<img class="sort-avatar" src="<{$user['avatar']}>"> <{$user['name']}>
+									<span class="sort-info"><{$user['run_time']}> 天</span>
+								</a>
+							<{/foreach}>
+						</div>
 					</div>
 				</div>
-			</div> -->
+			</div>
 		</div>
 		<!-- 朋友圈 -->
 		<div class="tab-pane fade" id="friendsgroup">

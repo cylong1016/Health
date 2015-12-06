@@ -148,4 +148,21 @@ function get_user_info($id) {
     return $res[0];
 }
 
+function get_user_orderby($key, $max) {
+    global $db;
+    $sql = "SELECT * FROM user ORDER BY $key DESC LIMIT 0, $max";
+    $res = $db->execute_dql_arr($sql);
+    return $res;
+}
+
+function get_user_rank($username, $key, $max) {
+    $arr = get_user_orderby($key, $max);
+    $len = count($arr);
+    for ($i = 0; $i < $len; $i++) {
+        if($username == $arr[$i]["id"]) {
+            return $i + 1;
+        }
+    }
+    return 999;
+}
 ?>
