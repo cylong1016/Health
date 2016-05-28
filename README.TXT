@@ -1,5 +1,5 @@
 ﻿# Health
-健康专家系统，大三web课作业
+面向 Web 的计算课程设计：健康专家系统
 
 1. 首页为public_html/index.php 但是设置了session 会跳转到login.php界面
 2. 使用了smarty模板，将php和html全部分开
